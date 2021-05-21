@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+/*style del header, falta hacer menu desplegable y acomodar el "menu" */
+
+.conteiner-header {
+    display: flex;
+    background-color: black;
+}
+
+.logo {
+    width: 180px;
+    height: 180px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.conteiner-nav {
+    background-color: silver;
+    display: block;
+}
+
+.nav {
+    padding-top: 15px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.btn-menu {
+    padding-top: 15px;
+}
+
+.nav li {
+    list-style: none;
+}
