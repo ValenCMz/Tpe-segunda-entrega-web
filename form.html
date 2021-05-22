@@ -1,12 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tienda de remeras online</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+
+    <header>
+        <img class="img-logo" src="images/logo.png" alt="logo de la tienda">
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="galeria.html">Galeria de productos</a></li>
+                <li><a href="#footer">Contacto</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section>
+
+        <h1>Formulario de compra</h1>
+
+        <form>
+
+            <div class="form-group">
+                <h2>Elección del producto</h2>
+                <select name="modelo">
+                    <option value="modelo1">Urbana</option>
+                    <option value="modelo1">Geek</option>
+                    <option value="modelo1">Crossfit</option>
+                    <option value="modelo1">Deconstructed</option>
+                </select>
+                <select name="talle">
+                    <option value="S">Talle S</option>
+                    <option value="M">Talle M</option>
+                    <option value="L">Talle L</option>
+                    <option value="XL">Talle XL</option>
+                </select>
+                <select name="color">
+                    <option value="blanco">Color Blanco</option>
+                    <option value="gris">Color Gris</option>
+                    <option value="negro">Color Negro</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+                <h2>Datos para el envío</h2>
+
+                <input type="text" name="nombre" value="" placeholder="Nombre" />
+                <input type="email" name="email" value="" placeholder="Email" />
+                <select name="pago">
+                    <option value="credito">Crédito</option>
+                    <option value="debito">Débito</option>
+                </select>
+                <input type="number" name="cuenta" value="" placeholder="N° de cuenta" />
+                <input type="text" name="direccion" value="" placeholder="Direccion a enviar" />
+
+                <p id="reintentar" class="error"></p>
+                <label for="inputCaptcha">¿Cuánto es <span id="valor1"></span> más <span id="valor2"></span>
+                    ?:</label>
+                <input id="inputCaptcha" type="number" value="" />
+                <input id="botonEnviar" type="button" value="Enviar pedido" />
+                <p id="enviado" class="confirmacion"></p>
+            </div>
+
+
+
+        </form>
+
+    </section>
+
+
+    <footer>
+        <p>Tienda de remeras online</p>
+        <p class="sub-line">Contacto:</p>
+        <p>Email: TDR@gmail.com</p>
+        <p>Instagram: @TiendaDeRemeras</p>
+    </footer>
+
+    <script type="text/javascript" src="js/form.js"></script>
 </body>
+
 </html>
