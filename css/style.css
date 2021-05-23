@@ -39,7 +39,7 @@ header {
 li {
     list-style: none;
     text-decoration: none;
-    color: black;
+    color: whitesmoke;
     text-transform: uppercase;
 }
 
@@ -55,20 +55,35 @@ li {
 
 }
 
-.btn-menu,
-nav {}
+.conteiner-nav {}
 
 nav a,
-li {
-    padding: 10px;
-
-}
+li {}
 
 nav {
     display: none;
     font-size: 15px;
 }
 
+/*index responsive*/
+.text-title {
+    font-size: 18px;
+}
+
+.img-model {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    width: 270px;
+
+}
+
+.text-info {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 0.5em;
+}
 
 /* formulario responsive */
 section {
