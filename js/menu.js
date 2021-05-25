@@ -1,11 +1,7 @@
-"use strict";
+//codigo para desplegar la barra de navegacion
+let botonnavegador = document.querySelector("#btn");
+botonnavegador.addEventListener("click", desplegarnav);
 
-let menu = document.querySelector("btn-menu");
-
-
-
-function desplegarmenu (menu){
-    
+function desplegarnav(){
+    document.querySelector(".conteiner-nav").classList.toggle("show");
 }
-
-menu.addEventListener(click, saludar);
