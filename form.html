@@ -19,6 +19,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="galeria.html">Galeria de productos</a></li>
                 <li><a href="#footer">Contacto</a></li>
+                <li><a href="form.html/#tabla-de-pedidos">Tabla de pedidos</a></li>
             </ul>
         </nav>
 
@@ -32,30 +33,26 @@
 
             <div class="form-group">
                 <h2>Elección del producto</h2>
-                <select name="modelo">
-                    <option value="modelo1">Urbana</option>
-                    <option value="modelo1">Geek</option>
-                    <option value="modelo1">Crossfit</option>
-                    <option value="modelo1">Deconstructed</option>
+                <select id="articulo" name="modelo">
+                    <option value="Urbana">Urbana</option>
+                    <option value="Geek">Geek</option>
+                    <option value="Crossfit">Crossfit</option>
+                    <option value="Deconstructed">Deconstructed</option>
                 </select>
-                <select name="talle">
+                <select id="talle" name="talle">
                     <option value="S">Talle S</option>
                     <option value="M">Talle M</option>
                     <option value="L">Talle L</option>
                     <option value="XL">Talle XL</option>
                 </select>
-                <select name="color">
-                    <option value="blanco">Color Blanco</option>
-                    <option value="gris">Color Gris</option>
-                    <option value="negro">Color Negro</option>
+                <select id="color" name="color">
+                    <option value="Blanco">Color Blanco</option>
+                    <option value="Gris">Color Gris</option>
+                    <option value="Negro">Color Negro</option>
                 </select>
-
-            </div>
-
-            <div class="form-group">
                 <h2>Datos para el envío</h2>
 
-                <input type="text" name="nombre" value="" placeholder="Nombre" />
+                <input id="cliente" type="text" name="nombre" value="" placeholder="Nombre" />
                 <input type="email" name="email" value="" placeholder="Email" />
                 <select name="pago">
                     <option value="credito">Crédito</option>
@@ -64,14 +61,43 @@
                 <input type="number" name="cuenta" value="" placeholder="N° de cuenta" />
                 <input type="text" name="direccion" value="" placeholder="Direccion a enviar" />
 
-                <p id="reintentar" class="error"></p>
-                <label for="inputCaptcha">¿Cuánto es <span id="valor1"></span> más <span id="valor2"></span>
-                    ?:</label>
-                <input id="inputCaptcha" type="number" value="" />
-                <input id="botonEnviar" type="button" value="Enviar pedido" />
-                <p id="enviado" class="confirmacion"></p>
             </div>
 
+            <div class="form-group">
+
+                <h2>Por favor, compruebe que no es un robot:</h2>
+                <label for="inputCaptcha">¿Cuánto es <span id="valor1"></span> más <span id="valor2"></span>
+                    ?:<p id="reintentar" class="error"></p>
+                    <p id="enviado" class="confirmacion"></p>
+                </label>
+                <input id="inputCaptcha" type="number" value="" />
+                <input id="botonEnviar" type="button" value="Enviar pedido" />
+
+                <select id="agregarVarios">
+                    <option>Seleccione para agregar varios pedidos</option>
+                    <option id="tres" value="3"> Agregar 3 pedidos</option>
+                    <option id="diez" value="10"> Agregar 10 pedidos</option>
+                    <option id="veinte" value="20">Agregar 20 pedidos</option>
+                </select>
+
+                <input id="borrar" type="button" value="Borrar Pedidos" />
+
+                <input id="nuevoPedido" type="button" value="Nuevo Pedido" />
+
+                <section>
+                    <h2>Tabla de pedidos</h2>
+                    <table id="tabla-dinamica">
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Artículo</th>
+                            <th>Talle</th>
+                            <th>Color</th>
+                        </tr>
+                    </table>
+
+                </section>
+
+            </div>
 
 
         </form>
@@ -79,11 +105,14 @@
     </section>
 
 
+
     <footer>
         <p>Tienda de remeras online</p>
-        <p class="sub-line">Contacto:</p>
-        <p>Email: TDR@gmail.com</p>
-        <p>Instagram: @TiendaDeRemeras</p>
+        <p>Contacto: tdr@gmail.com</p>
+        <div>
+            <img src="images/f-icon.png" alt="página de facebook de Tienda de remeras">
+            <img src="images/in-icon.png" alt="perfil de Instagram de Tienda de remeras">
+        </div>
     </footer>
 
     <script type="text/javascript" src="js/form.js"></script>
