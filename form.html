@@ -11,17 +11,31 @@
 
 <body>
 
-    <header>
-        <img class="img-logo" src="images/logo.png" alt="logo de la tienda">
+    <header class="conteiner-header">
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="galeria.html">Galeria de productos</a></li>
-                <li><a href="#footer">Contacto</a></li>
-                <li><a href="form.html/#tabla-de-pedidos">Tabla de pedidos</a></li>
-            </ul>
+        <div class="logo">
+            <img class="img-logo" src="images/logo.png" alt="">
+        </div>
+
+        <div class="btn-menu">
+            <p id="btn">☰</p>
+
+        </div>
+
+        <nav class="conteiner-nav">
+            <div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="galeria.html">Galeria de productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="form.html/#tabla-de-pedidos">Tabla de pedidos</a></li>
+                </ul>
+            </div>
         </nav>
+
+        <div class="text-web">
+            Tienda de remeras
+        </div>
 
     </header>
 
@@ -84,7 +98,7 @@
 
                 <input id="nuevoPedido" type="button" value="Nuevo Pedido" />
 
-                <section>
+                <section id="tabla-de-pedidos">
                     <h2>Tabla de pedidos</h2>
                     <table id="tabla-dinamica">
                         <tr>
@@ -108,7 +122,7 @@
 
     <footer>
         <p>Tienda de remeras online</p>
-        <p>Contacto: tdr@gmail.com</p>
+        <p id="contacto">Contacto: tdr@gmail.com</p>
         <div>
             <img src="images/f-icon.png" alt="página de facebook de Tienda de remeras">
             <img src="images/in-icon.png" alt="perfil de Instagram de Tienda de remeras">
@@ -116,6 +130,7 @@
     </footer>
 
     <script type="text/javascript" src="js/form.js"></script>
+    <script src="js/menu.js"></script>
 </body>
 
 </html>

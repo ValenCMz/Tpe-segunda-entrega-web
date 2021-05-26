@@ -7,67 +7,94 @@
     box-sizing: content-box;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+
+}
+
 img {
     max-width: 100%;
 }
 
 
-/*style del header, falta hacer menu desplegable y acomodar el "menu" */
+/*style del header*/
 
 header {
     display: flex;
     background-color: black;
     border-bottom: 2px solid aquamarine;
+    padding: 15px;
+    justify-content: space-between;
+    position: relative;
 }
+
 
 .logo {
-    font-family: Arial, Helvetica, sans-serif;
-    padding-left: 8em;
-    padding-bottom: 2em;
-    position: relative;
-    top: 1em;
-    color: whitesmoke;
+    display: none;
 }
 
-.logo p {
+.text-web {
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
     border-bottom: 2px solid aquamarine;
     font-size: 1.3em;
 }
 
-.conteiner-header a,
-li {
-    list-style: none;
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
+.btn-menu {
+    font-size: x-large;
 }
 
-.btn-menu a {
+.btn-menu p {
     color: whitesmoke;
 }
 
-.btn-menu {
-    position: relative;
-    top: 0.5em;
-    padding-left: 10px;
-    font-size: x-large;
-
-}
-
-.btn-menu,
-nav {}
-
-nav a,
-li {
-    padding: 10px;
-
-}
-
-nav {
+.conteiner-nav {
     display: none;
-    font-size: 15px;
 }
 
+.conteiner-nav a {
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.conteiner-nav.show {
+    position: absolute;
+    top: 100%;
+    font-size: 15px;
+    background-color: black;
+    display: flex;
+    left: 0;
+    right: 0;
+}
+
+.conteiner-nav li {
+    padding: 15px;
+}
+
+/*index responsive*/
+.text-title {
+    display: flex;
+    font-size: 18px;
+}
+
+.img-model {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    width: 270px;
+
+}
+
+.text-info {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 0.5em;
+}
 
 /* formulario responsive */
 section {
@@ -124,4 +151,97 @@ footer img {
 
 footer p {
     margin: 3px;
+    /*Vista en monitor*/
+}
+
+@media only screen and (min-width: 600px) {
+
+    /*Vista del index en monitor*/
+    .btn-menu,
+    .text-web {
+        display: none;
+    }
+
+    .img {
+        max-width: 100%;
+    }
+
+    header {
+        border: none;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .img-logo {
+        width: 40%;
+    }
+
+    .logo {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        background-color: black;
+
+    }
+
+    .conteiner-nav {
+        display: flex;
+        list-style: none;
+        text-align: center;
+        justify-content: center;
+        border: 5px double black;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: white;
+    }
+
+    .conteiner-nav a {
+        color: black;
+    }
+
+    nav li a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 900;
+        padding: 15px;
+        display: block;
+    }
+
+    nav li {
+        display: inline-block;
+    }
+
+    nav li:hover a {
+        background: #333;
+        color: white;
+    }
+
+    .text-title .text-info {
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .text-title {
+        justify-content: center;
+        font-size: x-large;
+    }
+
+    .img-model {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        width: 400px;
+        height: 400px;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: white;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 900;
+        padding-left: 200px;
+        padding-right: 200px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
 }
