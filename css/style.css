@@ -5,6 +5,8 @@
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 
@@ -39,7 +41,6 @@ header {
 }
 
 .text-web {
-    font-family: Arial, Helvetica, sans-serif;
     color: whitesmoke;
     border-bottom: 2px solid aquamarine;
     font-size: 1.3em;
@@ -91,7 +92,6 @@ header {
 }
 
 .text-info {
-    font-family: 'Times New Roman', Times, serif;
     font-weight: 600;
     text-align: center;
     padding-top: 0.5em;
@@ -217,9 +217,6 @@ footer p {
         color: white;
     }
 
-    .text-title .text-info {
-        font-family: 'Times New Roman', Times, serif;
-    }
 
     .text-title {
         justify-content: center;
@@ -238,7 +235,7 @@ footer p {
         display: flex;
         justify-content: space-evenly;
         background-color: white;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-family: 'Open Sans', sans-serif;
         font-weight: 900;
         padding-left: 200px;
         padding-right: 200px;
