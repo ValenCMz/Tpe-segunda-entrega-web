@@ -128,7 +128,6 @@ function agregarPedido(pedido, pedidos) {
 }
 
 function agregarVarios(pedidos, multiplicador) {
-    console.log(multiplicador);
     let ultimoPedido = pedidos[pedidos.length - 1];
     for (let i = 0; i < Number(multiplicador); i++) {
         pedidos.push(ultimoPedido);

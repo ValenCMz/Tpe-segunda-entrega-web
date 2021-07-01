@@ -1,136 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
+<section id="containerForm">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de remeras online</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-</head>
+    <h1>Formulario de compra</h1>
 
-<body>
+    <form>
 
-    <header class="conteiner-header">
-
-        <div class="logo">
-            <img class="img-logo" src="images/logo.png" alt="">
+        <div class="form-group">
+            <input id="cliente" type="text" name="nombre" value="" placeholder="Nombre y Apellido"
+                class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" />
+            <select id="articulo" name="modelo"
+                class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-state">
+                <option value="-"> Artículo</option>
+                <option value="artículo 1">artículo 1</option>
+                <option value="artículo 2">artículo 2</option>
+                <option value="articulo 3">articulo 3</option>
+            </select>
+            <select id="color" name="color"
+                class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-state">
+                <option value="-">Color</option>
+                <option value="1">color 1</option>
+                <option value="2">color 2</option>
+                <option value="3">color 3</option>
+            </select>
+            <select id="talle" name="talle"
+                class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-state">
+                <option value="-">Talle</option>
+                <option value="1">talle 1 </option>
+                <option value="2">talle 2</option>
+                <option value="3">talle 3</option>
+            </select>
         </div>
 
-        <div class="btn-menu">
-            <p id="btn">☰</p>
+        <div class="form-group">
+            <h2>Por favor, compruebe que no es un robot:</h2>
+            <label for="inputCaptcha">¿Cuánto es <span id="valor1"></span> más <span id="valor2"></span>
+                ?:<p id="mensaje" class="error confirmacion"></p>
+            </label>
+            <input id="inputCaptcha" type="number" value="" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+                placeholder="Ingrese el resultado" />
+            <input id="botonEnviar" type="button" value="Enviar pedido" />
 
+            <select id="agregarVarios">
+                <option>Seleccione para agregar varios pedidos</option>
+                <option id="tres" value="3"> Agregar 3 pedidos</option>
+                <option id="diez" value="4"> Agregar 4 pedidos</option>
+                <option id="veinte" value="5">Agregar 5 pedidos</option>
+            </select>
         </div>
-
-        <nav class="conteiner-nav">
-            <div>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="galeria.html">Galeria de productos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
-        </nav>
-
-        <div class="text-web">
-            Tienda de remeras
-        </div>
-
-    </header>
-
+    </form>
     <section>
-
-        <h1>Formulario de compra</h1>
-
-        <form>
-
-            <div class="form-group">
-                <h2>Elección del producto</h2>
-                <select id="articulo" name="modelo">
-                    <option value="Urbana">Urbana</option>
-                    <option value="Geek">Geek</option>
-                    <option value="Crossfit">Crossfit</option>
-                    <option value="Deconstructed">Deconstructed</option>
-                </select>
-                <select id="talle" name="talle">
-                    <option value="S">Talle S</option>
-                    <option value="M">Talle M</option>
-                    <option value="L">Talle L</option>
-                    <option value="XL">Talle XL</option>
-                </select>
-                <select id="color" name="color">
-                    <option value="Blanco">Color Blanco</option>
-                    <option value="Gris">Color Gris</option>
-                    <option value="Negro">Color Negro</option>
-                </select>
-                <h2>Datos para el envío</h2>
-
-                <input id="cliente" type="text" name="nombre" value="" placeholder="Nombre" />
-                <input type="email" name="email" value="" placeholder="Email" />
-                <select name="pago">
-                    <option value="credito">Crédito</option>
-                    <option value="debito">Débito</option>
-                </select>
-                <input type="number" name="cuenta" value="" placeholder="N° de cuenta" />
-                <input type="text" name="direccion" value="" placeholder="Direccion a enviar" />
-
-            </div>
-
-            <div class="form-group">
-
-                <h2>Por favor, compruebe que no es un robot:</h2>
-                <label for="inputCaptcha">¿Cuánto es <span id="valor1"></span> más <span id="valor2"></span>
-                    ?:<p id="mensaje" class="error confirmacion"></p>
-                </label>
-                <input id="inputCaptcha" type="number" value="" />
-                <input id="botonEnviar" type="button" value="Enviar pedido" />
-
-                <select id="agregarVarios">
-                    <option>Seleccione para agregar varios pedidos</option>
-                    <option id="tres" value="3"> Agregar 3 pedidos</option>
-                    <option id="diez" value="10"> Agregar 10 pedidos</option>
-                    <option id="veinte" value="20">Agregar 20 pedidos</option>
-                </select>
-
-                <input id="borrar" type="button" value="Borrar Pedidos" />
-
-                <input id="nuevoPedido" type="button" value="Nuevo Pedido" />
-
-                <section id="tabla-de-pedidos">
-                    <h2>Tabla de pedidos</h2>
-                    <table id="tabla-dinamica">
-                        <tr>
-                            <th>Cliente</th>
-                            <th>Artículo</th>
-                            <th>Talle</th>
-                            <th>Color</th>
-                        </tr>
-                    </table>
-
-                </section>
-
-            </div>
-
-
-        </form>
-
+        <section id="encabezadoTabla">
+            <h2>Tabla de pedidos</h2>
+            <input type="text" id="buscar" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+                placeholder="Buscar" />
+        </section>
+        <table class="table-fixed">
+            <thead>
+                <th class="w-1/4 ">Cliente</th>
+                <th class="w-1/4 ">Articulo</th>
+                <th class="w-1/4 ">Color</th>
+                <th class="w-1/4 ">Talle</th>
+                <th class="w-1/4 ">Acciones</th>
+            </thead>
+            <tbody id="tabla-dinamica">
+            </tbody>
+        </table>
     </section>
+</section>
 
 
-
-    <footer>
-        <p>Tienda de remeras online</p>
-        <p id="contacto">Contacto: tdr@gmail.com</p>
-        <div>
-            <img src="images/f-icon.png" alt="página de facebook de Tienda de remeras">
-            <img src="images/in-icon.png" alt="perfil de Instagram de Tienda de remeras">
-        </div>
-    </footer>
-
-    <script type="text/javascript" src="js/form.js"></script>
-    <script src="js/menu.js"></script>
-</body>
-
-</html>
+<script type="text/javascript" src="js/form2.js"></script>
