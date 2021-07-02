@@ -1,23 +1,33 @@
+
 function iniciarPagina() {
     const url = 'https://60caa69221337e0017e42c46.mockapi.io/api/pedidos';
-    let estado = {
-        idUltimo: 0,
-    };
-
+    
     document.getElementById("valor1").innerHTML = sortearValor1();
     document.getElementById("valor2").innerHTML = sortearValor2();
-    document
-        .getElementById("botonEnviar")
-        .addEventListener("click", function (e) {
-            validarFormulario(estado)
-        });
-    obtenerPedidos(estado);
-
-    let btnMultiplicar = document.querySelector("#agregarVarios");
-    btnMultiplicar.addEventListener("onchange", function (e) {
-        agregarVarios(this.value, estado);
+    
+    document.getElementById("botonEnviar").addEventListener("click", validarFormulario);
+        
+    let inputBuscar = document.querySelector("#buscar");
+    inputBuscar.addEventListener("input", function (e) {
+        buscarEnLocal(pedidosArr, e.target.value);
     });
+
     let pedidosArr = [];
+
+    obtenerPedidos();
+
+    function sortearValor1() {
+        let valor1 = (Math.random() * 10).toFixed(0);
+        document.getElementById("valor1").innerHTML = valor1;
+        return valor1;
+    }
+
+    function sortearValor2() {
+        let valor2 = (Math.random() * 10).toFixed(0);
+        document.getElementById("valor2").innerHTML = valor2;
+        return valor2;
+    }
+
     async function obtenerPedidos() {
         try {
             let res = await fetch(url);
@@ -28,11 +38,6 @@ function iniciarPagina() {
             console.log(error);
         }
     }
-
-    let inputBuscar = document.querySelector("#buscar");
-    inputBuscar.addEventListener("input", function (e) {
-        buscarEnLocal(pedidosArr, e.target.value);
-    });
 
     function buscarEnLocal(arr, value) {
         let filtrado = arr.filter(pedido => {
@@ -75,7 +80,7 @@ function iniciarPagina() {
         });
         btnBorrar.addEventListener("click", async function (e) {
             btnBorrar.disabled = true;
-            await borrarFilaPedido(estado, pedido);
+            await borrarFilaPedido( pedido);
             btnBorrar.disabled = false;
         });
         tr.appendChild(cliente);
@@ -131,41 +136,21 @@ function iniciarPagina() {
         } catch (error) {}
     }
 
-    function sortearValor1() {
-        let valor1 = (Math.random() * 10).toFixed(0);
-        document.getElementById("valor1").innerHTML = valor1;
-        return valor1;
-    }
-
-    function sortearValor2() {
-        let valor2 = (Math.random() * 10).toFixed(0);
-        document.getElementById("valor2").innerHTML = valor2;
-        return valor2;
-    }
-
-    function validarFormulario(estado) {
+    function validarFormulario() {
         let inputUsuario = document.getElementById("inputCaptcha");
         let valorUsuario = inputUsuario.value;
         let suma = Number(valor1.innerHTML) + Number(valor2.innerHTML);
         if (valorUsuario == suma) {
-            enviarFormulario(estado);
+            enviarFormulario();
             sortearValor1();
             sortearValor2();
         } else {
-            setearMensaje("Incorrecto. Por favor, reintentar.", "error");
             sortearValor1();
             sortearValor2();
         }
     }
 
-    function setearMensaje(texto, clase) {
-        let mensaje = document.getElementById("mensaje");
-        mensaje.removeAttribute("class");
-        mensaje.classList.add(clase);
-        mensaje.innerHTML = texto;
-    }
-
-    async function enviarFormulario(estado) {
+    async function enviarFormulario() {
         let cliente = document.getElementById("cliente").value;
         let articulo = document.getElementById("articulo").value;
         let talle = document.getElementById("talle").value;
@@ -185,47 +170,20 @@ function iniciarPagina() {
                 "body": JSON.stringify(nuevoPedido)
             });
             if (res.status == 201) {
-                setearMensaje("Pedido Registrado", "confirmacion");
-                obtenerPedidos(estado);
+                obtenerPedidos();
             }
         } catch (error) {
             console.log(error);
         }
     }
 
-    async function agregarVarios(multiplicador, estado) {
-        try {
-            for (let i = 0; i < multiplicador; i++) {
-                let nuevoPedido = {
-                    cliente: "susana Gimenez",
-                    articulo: "articulo 2",
-                    talle: "talle 2",
-                    color: "color 1"
-                }
-
-                let res = await fetch(url, {
-                    "method": "POST",
-                    "headers": {
-                        "Content-type": "application/json"
-                    },
-                    "body": JSON.stringify(nuevoPedido)
-                });
-            }
-            setearMensaje("Pedido Registrado", "confirmacion");
-            obtenerPedidos(estado);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-
-    async function borrarFilaPedido(estado, pedido) {
+    async function borrarFilaPedido(pedido) {
         try {
             let res = await fetch(`${url}/${pedido.id}`, {
                 "method": "DELETE"
             });
             if (res.status == 200) {
-                obtenerPedidos(estado);
+                obtenerPedidos();
             }
         } catch (error) {
             console.log(error);

@@ -1,3 +1,4 @@
+//https://stackoverflow.com/questions/2592092/executing-script-elements-inserted-with-innerhtml
 var setInnerHTML = function (elm, html) {
     elm.innerHTML = html;
     Array.from(elm.querySelectorAll("script")).forEach(oldScript => {
